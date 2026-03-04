@@ -1,0 +1,261 @@
+/* User Shared Styles (Header & Footer) */
+
+/* Top Navigation */
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 60px; /* Reduced height for standard header */
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: relative;
+  width: 100%;
+  min-width: 100%; /* Ensure it spans full scroll width */
+  box-sizing: border-box;
+  z-index: 1000;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #2D2F31;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--primary-600);
+}
+
+.nav-search {
+  display: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.welcome-msg {
+  font-weight: 600;
+  margin-right: 8px;
+  color: #2D2F31;
+}
+
+/* Update buttons in header to be visible on dark background if needed */
+.top-nav .btn-outline {
+  color: #2D2F31;
+  border-color: #2D2F31;
+}
+.top-nav .btn-outline:hover {
+  background: #2D2F31;
+  color: white;
+}
+
+/* Header Styles */
+.header-logo {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.nav-btn {
+  background-color: #A435F0;
+  color: white;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: #8a2be2;
+}
+
+/* Deep Footer */
+.footer {
+  background: #1C1D1F;
+  color: white;
+  padding: 32px 24px 16px;
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  width: 100%;
+  margin: 0; /* Align to the left instead of centering */
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-heading {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #a435f0;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align logo to the left */
+}
+
+.footer-logo-link {
+  display: block;
+  line-height: 0;
+}
+
+.footer-logo {
+  height: auto;
+  max-width: 100%;
+  width: 150px;
+  object-fit: contain;
+  margin-top: -60px; /* Align logo with headings */
+}
+
+/* Legacy footer styles for compatibility if used elsewhere */
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  width: 100%;
+  margin: 24px 0 0; /* Align to the left instead of centering */
+  padding-top: 16px;
+  border-top: 1px solid #3E4143;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* Desktop only: Align last footer column (Contest) to the right but keep text aligned left */
+@media (min-width: 769px) {
+  .footer-grid .footer-col:last-child {
+    justify-self: end; /* Move the whole block to the right */
+    align-items: flex-start; /* Align text to the left */
+    padding-right: 100px; /* Keep off the corner */
+  }
+}
+
+@media (max-width: 768px) {
+  .top-nav {
+    padding: 0 12px;
+  }
+
+  .nav-left {
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .welcome-msg {
+    display: none;
+  }
+
+  .nav-right {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .header-logo {
+    width: 120px;
+  }
+
+  .nav-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  .footer {
+    padding: 32px 16px 16px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .footer-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin: 0 auto -20px;
+    height: auto;
+    max-width: 100%;
+    object-position: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-logo {
+    width: 100px;
+  }
+  
+  .nav-right {
+    gap: 5px;
+  }
+  
+  .nav-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
